@@ -25,8 +25,19 @@
         // exercicio2
         let numero1 =parseInt(prompt('Insira um Número: ', ''));
         if(numero1>=0){
+            let isPrimo = true;
+
+            for (let i = 2; i < numero1; i++) {
+                if (numero1 % i ===0) {
+                    isPrimo = false;
+                }
+            }
             
-            alert(' O número é par')
+            if (isPrimo) {
+                alert("O número " + numero1 + " é primo")
+            } else {
+                alert("O número " + numero1 + " não é primo")
+            }
         }
         // exercicio3
         let numero2 = parseInt(prompt('Insira um Número: ', ''));
@@ -35,10 +46,20 @@
         }
         else if (numero2 %2 === 1){
             alert(' O número é ímpar')
-        }
-        else{
+        } else {
             alert(' O valor é ínvalido')
+        }
+
+        // exercicio4
+        let numero3 =parseInt(prompt('Insira um Número: ', ''));
+        if (numero3 >=0){
+            let fatorial = 1;
+            for (let i = 1; i <= numero3; i++) {
+                fatorial *= i;
             }
+            alert("O fatorial do número inserido é:  " + fatorial )
+        }
+
         
 
 </script>
