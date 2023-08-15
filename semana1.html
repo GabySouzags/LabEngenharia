@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Semana 1</title>
     <script>
+        // teste 
         document.write('Hello world!');
         let nome = prompt('Digite seu nome: ', '');
         if(confirm('Quer ver seu nome? ')){
@@ -13,6 +14,33 @@
         for(i=1; i<=6; i++){
             document.write("<h"+i+" >Olá sala!</h"+i+">");
         }
+        // exercicio 1
+        let variavel = prompt('Insira um valor: ', '');
+        if(confirm('Deseja ver o tipo de dado informado? ')){
+            alert('Sua variavel é: '+ typeof(variavel))
+        }
+        else {
+            alert('Obrigado por visitar esta pagina!!')
+        };
+        // exercicio2
+        let numero1 =parseInt(prompt('Insira um Número: ', ''));
+        if(numero1>=0){
+            
+            alert(' O número é par')
+        }
+        // exercicio3
+        let numero2 = parseInt(prompt('Insira um Número: ', ''));
+        if(numero2 %2 === 0){
+            alert(' O número é par')
+        }
+        else if (numero2 %2 === 1){
+            alert(' O número é ímpar')
+        }
+        else{
+            alert(' O valor é ínvalido')
+            }
+        
+
 </script>
     <a href="index.html">Voltar</a>
 </head>
