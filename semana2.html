@@ -4,8 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Semana 2</title>
+    <h1> Atividade semana 2</h1>
 </head>
 <body>
-    <h1> Atividade semana 2</h1>
+    <input type="text" name="" id="userInput">
+    <button onclick="AdicionaItem()">Adicionar</button>
+    <div id="display"></div>
+    <script>
+
+        let array = []
+        function AdicionaItem() {
+
+            document.getElementById("display").innerHTML = '';
+            let valor = document.getElementById('userInput').value;
+            
+            array.push(valor);
+            // console.log(array);
+            let x = array.sort();
+            let p = document.createElement("p");
+            let tn = document.createTextNode(array);
+            p.appendChild(tn);
+            document.getElementById("display").appendChild(p);
+
+
+            console.log(x);
+            
+            
+        }
+
+        
+
+    </script>
+    
 </body>
 </html>
