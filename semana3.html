@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Semana 3</title>
 
+</head>
+<body>
     <script type="text/javascript">
         // Exemplo da aula
         // let data = new Date()
@@ -87,15 +89,25 @@
                 break;
             
         }
-        
-        document.write(diaDaSemana +", " + date.getDate() + " " +  NomeDoMes + " " +date.getFullYear());
-
-
-        
-        
+        let dataJs = document.createElement('h1');
+        let textNode = document.createTextNode(diaDaSemana +", " + date.getDate() + " " +  NomeDoMes + " " +date.getFullYear());
+        dataJs.appendChild(textNode);
+        document.body.appendChild(dataJs);
     </script>
-</head>
-<body>
+    <script>
+        
+                // Exercicio3
+                let texto = prompt("Insira uma palavra ou frase").toLowerCase();
+                let reverso = texto.split('').reverse().join('');
+                if(texto === reverso) { 
+                    alert("A palavra " + texto +" é um palindromo!");
+                }
+                else{ 
+                    alert("A palavra "+ texto + " não é um palindromo!");
+                }
+
+
+    </script>
 
 </body>
 </html>
