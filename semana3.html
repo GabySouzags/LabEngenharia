@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript">
+        // Exemplo da aula
+        // let data = new Date()
+        // document.write(data);
+        // let dia = data.getDate();
+        // document.write("<br>" + dia)
+
+        // Exercicio1
+        let date = new Date();
+        let diaDaSemana ="";
+        switch (date.getDay()) 
+        {
+            case 0:
+                diaDaSemana = "Domingo";
+                break;
+
+            case 1:
+                diaDaSemana = "Segunda-feira";
+                break;
+
+            case 2:
+                diaDaSemana = "Terça-feira";
+                break;
+
+            case 3:
+                diaDaSemana = "Quarta-feira";
+                break;
+
+            case 4:
+                diaDaSemana = "Quinta-feira";
+                break;
+
+            case 5:
+                diaDaSemana = "Sexta-feira";
+                break;
+
+            case 6:
+                diaDaSemana = "Sábado";
+                break;
+        }
+
+        let NomeDoMes ="";
+        switch (date.getMonth()) 
+        {
+            case 0:
+                NomeDoMes= "Janeiro";
+                break;
+            case 1:
+                NomeDoMes= "Fevereiro";
+                break;
+            case 2:
+                NomeDoMes= "Março";
+                break;
+            case 3:
+                NomeDoMes= "Abril";
+                break;
+            case 4:
+                NomeDoMes= "Maio";
+                break;
+            case 5:
+                NomeDoMes= "Junho";
+                break;
+            case 6:
+                NomeDoMes= "Julho";
+                break;
+            case 7:
+                NomeDoMes= "Agosto";
+                break;
+            case 8:
+                NomeDoMes= "Setembro";
+                break;
+            case 9:
+                NomeDoMes= "Outubro";
+                break;
+            case 10:
+                NomeDoMes= "Novembro";
+                break;
+            case 11:
+                NomeDoMes= "Dezembro";
+                break;
+            
+        }
+        
+        document.write(diaDaSemana +", " + date.getDate() + " " +  NomeDoMes + " " +date.getFullYear());
+
+
+        
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>
