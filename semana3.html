@@ -7,6 +7,8 @@
 
 </head>
 <body>
+
+    <h1 class="relogio"></h1>
     <script type="text/javascript">
         // Exemplo da aula
         // let data = new Date()
@@ -93,6 +95,23 @@
         let textNode = document.createTextNode(diaDaSemana +", " + date.getDate() + " " +  NomeDoMes + " " +date.getFullYear());
         dataJs.appendChild(textNode);
         document.body.appendChild(dataJs);
+    </script>
+
+    <script>
+        // Exrcicio2
+        function Relogio(){
+            let date = new Date();
+            let hora = date.getHours().toString().padStart(2,"0");
+            let min = date.getMinutes().toString().padStart(2,"0");
+            let sec = date.getSeconds().toString().padStart(2,"0");
+
+            document.querySelector(".relogio").innerHTML = hora + " : " + min + " : " + sec ;
+            
+            setTimeout(Relogio, 1000);
+
+        }
+
+        Relogio();
     </script>
     <script>
         
