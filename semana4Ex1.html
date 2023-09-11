@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 4 Exe1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        .radio-label {
+            margin-right: 15px;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro</h1>
+        <form id="cadastroForm">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required><br>
+
+            <label for="dataNascimento">Data de Nascimento:</label>
+            <input type="date" id="dataNascimento" required><br>
+
+            <label for="telFixo">Telefone Fixo:</label>
+            <input type="tel" id="telFixo" pattern="\(\d{2}\) \d{4,5}-\d{4}" placeholder="(XX) XXXXX-XXXX"><br>
+
+            <label for="telCelular">Telefone Celular:</label>
+            <input type="tel" id="telCelular" pattern="\(\d{2}\) \d{4,5}-\d{4}" placeholder="(XX) XXXXX-XXXX" required><br>
+
+            <label for="tipo">Tipo:</label>
+            <input type="radio" id="aluno" name="tipo" value="aluno" class="radio-input">
+            <label class="radio-label" for="aluno">Aluno</label>
+            <input type="radio" id="professor" name="tipo" value="professor" class="radio-input">
+            <label class="radio-label" for="professor">Professor</label><br>
+
+            <div id="alunoFields" style="display: none;">
+                <label for="curso">Curso:</label>
+                <input type="text" id="curso"><br>
+
+                <label for="matriculaAluno">Matrícula:</label>
+                <input type="text" id="matriculaAluno"><br>
+            </div>
+
+            <div id="professorFields" style="display: none;">
+                <label for="areaAtuacao">Área de Atuação:</label>
+                <input type="text" id="areaAtuacao"><br>
+
+                <label for="matriculaProfessor">Matrícula:</label>
+                <input type="text" id="matriculaProfessor"><br>
+
+                <label for="lattes">Lattes:</label>
+                <input type="text" id="lattes"><br>
+            </div>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+
+    <script>
+        const tipoAluno = document.getElementById("aluno");
+        const tipoProfessor = document.getElementById("professor");
+        const alunoFields = document.getElementById("alunoFields");
+        const professorFields = document.getElementById("professorFields");
+
+        const cadastroForm = document.getElementById("cadastroForm");
+
+        tipoAluno.addEventListener("change", function () {
+            if (tipoAluno.checked) {
+                alunoFields.style.display = "block";
+                professorFields.style.display = "none";
+            }
+        });
+
+        tipoProfessor.addEventListener("change", function () {
+            if (tipoProfessor.checked) {
+                professorFields.style.display = "block";
+                alunoFields.style.display = "none";
+            }
+        });
+
+        cadastroForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const nome = document.getElementById("nome").value;
+            const dataNascimento = document.getElementById("dataNascimento").value;
+            const telFixo = document.getElementById("telFixo").value;
+            const telCelular = document.getElementById("telCelular").value;
+            const tipo = tipoAluno.checked ? "Aluno" : "Professor";
+
+            let infoAdicionais = "";
+
+            if (tipo === "Aluno") {
+                const curso = document.getElementById("curso").value;
+                const matriculaAluno = document.getElementById("matriculaAluno").value;
+                infoAdicionais = `Curso: ${curso}, Matrícula: ${matriculaAluno}`;
+            } else {
+                const areaAtuacao = document.getElementById("areaAtuacao").value;
+                const matriculaProfessor = document.getElementById("matriculaProfessor").value;
+                const lattes = document.getElementById("lattes").value;
+                infoAdicionais = `Área de Atuação: ${areaAtuacao}, Matrícula: ${matriculaProfessor}, Lattes: ${lattes}`;
+            }
+
+            // Aqui, você pode fazer o que desejar com as informações coletadas.
+            // Por exemplo, você pode exibi-las em um alerta.
+            alert(`Nome: ${nome}, Data de Nascimento: ${dataNascimento}, Telefone Fixo: ${telFixo}, Telefone Celular: ${telCelular}, Tipo: ${tipo}, ${infoAdicionais}`);
+        });
+    </script>
+</body>
+</html>
