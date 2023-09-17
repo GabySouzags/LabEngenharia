@@ -28,26 +28,64 @@
             margin: 10px;
             cursor: pointer;
         }
+        .incrementar {
+            width: 75px;
+            height: 75px;
+            border-radius: 100%;
+            border: none;
+            font-size: 2rem;
+            font-weight: bold;
+            background-color: green;
+            color: white;
+        }
+
+        .decrementar {
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            border: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-color: red;
+            color: white;
+        }
+        .resetar{
+            background-color: black;
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+        }
+        .imagem{
+            width:128px;
+            height:128px;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
     </style>
 </head>
 <body>
     <div class="contador">
         <p>Total de Pessoas: <span id="total">0</span></p>
+        <div>
+            <img src="/images/IconeHomem.png" alt="IconeHomem"class="imagem">
+            <img src="/images/IconeMulher.png" alt="IconeMulher"class="imagem">
+        </div>
         <div class="contador-pessoas">
             <div class="contador-box">
                 <p>Homens</p>
                 <span id="homens">0</span>
-                <button id="incrementarHomens">+</button>
-                <button id="decrementarHomens">-</button>
+                <button id="incrementarHomens"  class="incrementar">+</button>
+                <button id="decrementarHomens"class="decrementar">-</button>
             </div>
             <div class="contador-box">
                 <p>Mulheres</p>
                 <span id="mulheres">0</span>
-                <button id="incrementarMulheres">+</button>
-                <button id="decrementarMulheres">-</button>
+                <button id="incrementarMulheres" class="incrementar">+</button>
+                <button id="decrementarMulheres" class="decrementar">-</button>
             </div>
         </div>
-        <button id="resetar">Reset</button>
+        <button id="resetar"class="resetar">Resetar</button>
+
     </div>
 
     <script>
